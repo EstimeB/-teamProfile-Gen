@@ -27,7 +27,7 @@ function init() {
                         internHire();
                         break;
                     default:
-                        // generateHTML();
+                        generateHTML();
                         console.log(fileHTML);
                 }
 
@@ -124,11 +124,9 @@ function internHire() {
 }
 
 function generateHTML() {
-    // fileHTML.push(creatFile);
-    fs.writeFile('index.html', fileHTML, (err) => {
-        err.throw(err);
+    fs.writeFileSync('index.html', fileHTML, (err) => {
+        if (err) throw err;
     })
-
 }
 
 init();

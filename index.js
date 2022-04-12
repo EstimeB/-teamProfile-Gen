@@ -63,8 +63,8 @@ function managerHire() {
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${theManager.getRole()}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h5>
+    <h6 class="card-title">${theManager.getRole()}</h6>
     <p class="card-text">Id: ${theManager.id}</p>
     <a href="mailto:${theManager.email}" class="card-link"></a>
     <p>Office Number: ${theManager.officeNumber}</p>
@@ -87,8 +87,8 @@ function engineerHire() {
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${theEngineer.getRole()}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h5>
+    <h6 class="card-title">${theEngineer.getRole()}</h6>
     <p class="card-text">Id: ${theEngineer.id}</p>
     <a href="mailto:${theEngineer.email}" class="card-link"></a>
     <p>Office Number: ${theEngineer.github}</p>
@@ -111,8 +111,8 @@ function internHire() {
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${theIntern.getRole()}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h5>
+    <h6 class="card-title">${theIntern.getRole()}</h6>
     <p class="card-text">Id: ${theIntern.id}</p>
     <a href="mailto:${theIntern.email}" class="card-link"></a>
     <p>Office Number: ${theIntern.school}</p>
@@ -124,6 +124,7 @@ function internHire() {
 }
 
 function generateHTML() {
+    creatFile.append(fileHTML);
     fs.writeFileSync('index.html', fileHTML, (err) => {
         if (err) throw err;
     })

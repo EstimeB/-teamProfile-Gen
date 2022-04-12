@@ -3,41 +3,41 @@ const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
-
+const creatFile = require('./lib/Cfile');
 
 let fileHTML = "";
 
-function init(){
+function init() {
     inquirer
-    .prompt([
-        {
-            type: 'list',
-            name: 'name',
-            choices:["Add Manager","Add Engineer","Add Intern","Exit App"],
-            message: 'Employer name?',
-        }]).then(function(response){
-            switch(response.name){
-                case "Add Manager":
-                    managerHire();
-                    break;
-                case "Add Engineer":
-                    engineerHire();
-                    break;
-                case "Add Intern":
-                    internHire();
-                    break;
-                default:
-                    // generateHTML();
-                    console.log(fileHTML);
-            }
+        .prompt([
+            {
+                type: 'list',
+                name: 'name',
+                choices: ["Add Manager", "Add Engineer", "Add Intern", "Exit App"],
+                message: 'Employer name?',
+            }]).then(function (response) {
+                switch (response.name) {
+                    case "Add Manager":
+                        managerHire();
+                        break;
+                    case "Add Engineer":
+                        engineerHire();
+                        break;
+                    case "Add Intern":
+                        internHire();
+                        break;
+                    default:
+                        // generateHTML();
+                        console.log(fileHTML);
+                }
 
-        })
+            })
 }
 let question = [
     {
-        type:"input",
-        message:"Enter Employee Name",
-        name:"empname"
+        type: "input",
+        message: "Enter Employee Name",
+        name: "empname"
     },
     {
         type: "input",
@@ -54,12 +54,12 @@ let question = [
 function managerHire() {
     let managerQuestions = question;
     managerQuestions.push({
-        type:"input",
-        message:"Enter Manager Office Number",
-        name:"manofficenum",
+        type: "input",
+        message: "Enter Manager Office Number",
+        name: "manofficenum",
     })
-    inquirer.prompt(managerQuestions).then(function(response){
-        let theManager = new Manager(response.empname,response.empid,response.empemail,response.manofficenum);
+    inquirer.prompt(managerQuestions).then(function (response) {
+        let theManager = new Manager(response.empname, response.empid, response.empemail, response.manofficenum);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -78,12 +78,12 @@ function managerHire() {
 function engineerHire() {
     let engineerQuestions = question;
     engineerQuestions.push({
-        type:"input",
-        message:"Enter Engineer GitHub UserName",
-        name:"enggithub",
+        type: "input",
+        message: "Enter Engineer GitHub UserName",
+        name: "enggithub",
     })
-    inquirer.prompt(engineerQuestions).then(function(response){
-        let theEngineer = new Engineer(response.empname,response.empid,response.empemail,response.enggithub);
+    inquirer.prompt(engineerQuestions).then(function (response) {
+        let theEngineer = new Engineer(response.empname, response.empid, response.empemail, response.enggithub);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -102,12 +102,12 @@ function engineerHire() {
 function internHire() {
     let internQuestions = question;
     internQuestions.push({
-        type:"input",
-        message:"Enter Intern School",
-        name:"intschool",
+        type: "input",
+        message: "Enter Intern School",
+        name: "intschool",
     })
-    inquirer.prompt(internQuestions).then(function(response){
-        let theIntern = new Intern(response.empname,response.empid,response.empemail,response.intschool);
+    inquirer.prompt(internQuestions).then(function (response) {
+        let theIntern = new Intern(response.empname, response.empid, response.empemail, response.intschool);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -121,6 +121,14 @@ function internHire() {
         `
         init();
     })
+}
+
+function generateHTML() {
+    // fileHTML.push(creatFile);
+    fs.writeFile('index.html', fileHTML, (err) => {
+        err.throw(err);
+    })
+
 }
 
 init();

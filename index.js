@@ -1,9 +1,11 @@
 const inquirer = require('inquirer');
-const fs = requirer('fs');
+const fs = require('fs');
 const Engineer = require('./lib/Engineer');
-const Manager = requirer('./lib/Manager');
-const Intern = requirer('./lib/Intern');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
+
+let fileHTML = "";
 
 function init(){
     inquirer
@@ -18,14 +20,15 @@ function init(){
                 case "Add Manager":
                     managerHire();
                     break;
-                case "Add Enginerr":
+                case "Add Engineer":
                     engineerHire();
                     break;
                 case "Add Intern":
-                    inetrnHire();
+                    internHire();
                     break;
                 default:
-                    generateHTML();
+                    // generateHTML();
+                    console.log(fileHTML);
             }
 
         })
@@ -48,9 +51,6 @@ let question = [
     }
 ]
 
-let fileHTML = "";
-
-
 function managerHire() {
     let managerQuestions = question;
     managerQuestions.push({
@@ -59,7 +59,7 @@ function managerHire() {
         name:"manofficenum",
     })
     inquirer.prompt(managerQuestions).then(function(response){
-        let theManager = new Manager(response.empname.response.empid.response.empemail.response.manofficenum);
+        let theManager = new Manager(response.empname,response.empid,response.empemail,response.manofficenum);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -71,6 +71,7 @@ function managerHire() {
   </div>
 </div>
         `
+        init();
     })
 }
 
@@ -82,7 +83,7 @@ function engineerHire() {
         name:"enggithub",
     })
     inquirer.prompt(engineerQuestions).then(function(response){
-        let theEngineer = new Engineer(response.empname.response.empid.response.empemail.response.enggithub);
+        let theEngineer = new Engineer(response.empname,response.empid,response.empemail,response.enggithub);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -94,6 +95,7 @@ function engineerHire() {
   </div>
 </div>
         `
+        init();
     })
 }
 
@@ -105,7 +107,7 @@ function internHire() {
         name:"intschool",
     })
     inquirer.prompt(internQuestions).then(function(response){
-        let theIntern = new Intern(response.empname.response.empid.response.empemail.response.intschool);
+        let theIntern = new Intern(response.empname,response.empid,response.empemail,response.intschool);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -117,5 +119,8 @@ function internHire() {
   </div>
 </div>
         `
+        init();
     })
 }
+
+init();

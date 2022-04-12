@@ -25,6 +25,7 @@
   "homepage": "https://github.com/EstimeB/-teamProfile-Gen#readme",
   "dependencies": {
     "inquirer": "^8.2.2",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "stack": "^0.1.0"
   }
 }

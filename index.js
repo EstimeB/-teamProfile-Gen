@@ -124,7 +124,6 @@ function internHire() {
 }
 
 function generateHTML() {
-    creatFile.append(fileHTML);
     fs.writeFileSync('index.html', fileHTML, (err) => {
         if (err) throw err;
     })

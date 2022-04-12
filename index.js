@@ -82,7 +82,7 @@ function engineerHire() {
         name:"enggithub",
     })
     inquirer.prompt(engineerQuestions).then(function(response){
-        let theEngineer = new Manager(response.empname.response.empid.response.empemail.response.enggithub);
+        let theEngineer = new Engineer(response.empname.response.empid.response.empemail.response.enggithub);
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -91,6 +91,29 @@ function engineerHire() {
     <p class="card-text">Id: ${theEngineer.id}</p>
     <a href="mailto:${theEngineer.email}" class="card-link"></a>
     <p>Office Number: ${theEngineer.github}</p>
+  </div>
+</div>
+        `
+    })
+}
+
+function internHire() {
+    let internQuestions = question;
+    internQuestions.push({
+        type:"input",
+        message:"Enter Intern School",
+        name:"intschool",
+    })
+    inquirer.prompt(internQuestions).then(function(response){
+        let theIntern = new Intern(response.empname.response.empid.response.empemail.response.intschool);
+        fileHTML += `
+        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${theIntern.getRole()}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h6>
+    <p class="card-text">Id: ${theIntern.id}</p>
+    <a href="mailto:${theIntern.email}" class="card-link"></a>
+    <p>Office Number: ${theIntern.school}</p>
   </div>
 </div>
         `

@@ -63,7 +63,7 @@ function managerHire() {
         fileHTML += `
         <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">${theManager.getRole()}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h6>
     <p class="card-text">Id: ${theManager.id}</p>
     <a href="mailto:${theManager.email}" class="card-link"></a>
@@ -74,3 +74,25 @@ function managerHire() {
     })
 }
 
+function engineerHire() {
+    let engineerQuestions = question;
+    engineerQuestions.push({
+        type:"input",
+        message:"Enter Engineer GitHub UserName",
+        name:"enggithub",
+    })
+    inquirer.prompt(engineerQuestions).then(function(response){
+        let theEngineer = new Manager(response.empname.response.empid.response.empemail.response.enggithub);
+        fileHTML += `
+        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${theEngineer.getRole()}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h6>
+    <p class="card-text">Id: ${theEngineer.id}</p>
+    <a href="mailto:${theEngineer.email}" class="card-link"></a>
+    <p>Office Number: ${theEngineer.github}</p>
+  </div>
+</div>
+        `
+    })
+}

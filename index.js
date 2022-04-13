@@ -123,11 +123,17 @@ function internHire() {
     })
 }
 
+const path = require('path');
+const DB_DIR = path.resolve(__dirname, 'db');
+const dbPath = path.join(DB_DIR, 'team.html');
+
 function generateHTML() {
-    fileHTML.appendFile(createFile);
-    fs.writeFileSync('index.html', fileHTML, (err) => {
-        if (err) throw err;
-    })
+    // const newFile = fileHTML.append(fileHTML);
+    if (!fs.existsSync(DB_DIR)) {
+        fs.mkdirSync(DB_DIR)
+    }
+
+    fs.writeFileSync(dbPath, createFile(fileHTML), 'utf8')
 }
 
 // Run program

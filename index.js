@@ -28,7 +28,7 @@ function init() {
                         break;
                     default:
                         generateHTML();
-                        // console.log(fileHTML);
+                    // console.log(fileHTML);
                 }
 
             })
@@ -61,15 +61,17 @@ function managerHire() {
     inquirer.prompt(managerQuestions).then(function (response) {
         let theManager = new Manager(response.empname, response.empid, response.empemail, response.manofficenum);
         fileHTML += `
-        <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h5>
-    <h6 class="card-title">${theManager.getRole()}</h6>
-    <p class="card-text">Id: ${theManager.id}</p>
-    <a href="mailto:${theManager.email}" class="card-link"></a>
-    <p>Office Number: ${theManager.officeNumber}</p>
-  </div>
-</div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            <h5 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h5>
+            <h6 class="card-title">${theManager.getRole()}</h6>
+        </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p class="card-text">Id: ${theManager.id}</p></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theManager.email}" class="card-link"></a></span></li>
+                <li class="list-group-item"><p>Office Number: ${theManager.officeNumber}</p></li>
+            </ul>
+    </div>
         `
         init();
     })
@@ -85,15 +87,17 @@ function engineerHire() {
     inquirer.prompt(engineerQuestions).then(function (response) {
         let theEngineer = new Engineer(response.empname, response.empid, response.empemail, response.enggithub);
         fileHTML += `
-        <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h5>
-    <h6 class="card-title">${theEngineer.getRole()}</h6>
-    <p class="card-text">Id: ${theEngineer.id}</p>
-    <a href="mailto:${theEngineer.email}" class="card-link"></a>
-    <p>Office Number: ${theEngineer.github}</p>
-  </div>
-</div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            <h5 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h5>
+            <h6 class="card-title">${theEngineer.getRole()}</h6>
+        </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p class="card-text">Id: ${theEngineer.id}</p></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theEngineer.email}" class="card-link"></a></span></li>
+                <li class="list-group-item"><p>GitHub: ${theEngineer.github}</p></li>
+            </ul>
+    </div>
         `
         init();
     })
@@ -109,15 +113,17 @@ function internHire() {
     inquirer.prompt(internQuestions).then(function (response) {
         let theIntern = new Intern(response.empname, response.empid, response.empemail, response.intschool);
         fileHTML += `
-        <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h5>
-    <h6 class="card-title">${theIntern.getRole()}</h6>
-    <p class="card-text">Id: ${theIntern.id}</p>
-    <a href="mailto:${theIntern.email}" class="card-link"></a>
-    <p>Office Number: ${theIntern.school}</p>
-  </div>
-</div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            <h5 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h5>
+            <h6 class="card-title">${theIntern.getRole()}</h6>
+        </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p class="card-text">Id: ${theIntern.id}</p></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theIntern.email}" class="card-link"></a></span></li>
+                <li class="list-group-item"><p>School: ${theIntern.school}</p></li>
+            </ul>
+    </div>
         `
         init();
     })
@@ -128,7 +134,6 @@ const DB_DIR = path.resolve(__dirname, 'db');
 const dbPath = path.join(DB_DIR, 'team.html');
 
 function generateHTML() {
-    // const newFile = fileHTML.append(fileHTML);
     if (!fs.existsSync(DB_DIR)) {
         fs.mkdirSync(DB_DIR)
     }

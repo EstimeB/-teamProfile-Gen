@@ -28,7 +28,6 @@ function init() {
                         break;
                     default:
                         generateHTML();
-                    // console.log(fileHTML);
                 }
 
             })
@@ -63,11 +62,12 @@ function managerHire() {
         fileHTML += `
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            <h5 class="card-subtitle mb-2 text-muted">Name: ${theManager.name}</h5>
+            <h5 class="card-subtitle">${theManager.name}</h5>
+            <br>
             <h6 class="card-title">${theManager.getRole()}</h6>
         </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p class="card-text">Id: ${theManager.id}</p></li>
+            <ul class="list-group">
+                <li class="list-group-item"><p class="card-text">ID: ${theManager.id}</p></li>
                 <li class="list-group-item">Email: <span class="email"><a href="mailto:${theManager.email}" class="card-link"></a></span></li>
                 <li class="list-group-item"><p>Office Number: ${theManager.officeNumber}</p></li>
             </ul>
@@ -89,11 +89,12 @@ function engineerHire() {
         fileHTML += `
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            <h5 class="card-subtitle mb-2 text-muted">Name: ${theEngineer.name}</h5>
+            <h5 class="card-subtitle">${theEngineer.name}</h5>
+            <br>
             <h6 class="card-title">${theEngineer.getRole()}</h6>
         </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p class="card-text">Id: ${theEngineer.id}</p></li>
+            <ul class="list-group">
+                <li class="list-group-item"><p class="card-text">ID: ${theEngineer.id}</p></li>
                 <li class="list-group-item">Email: <span class="email"><a href="mailto:${theEngineer.email}" class="card-link"></a></span></li>
                 <li class="list-group-item"><p>GitHub: ${theEngineer.github}</p></li>
             </ul>
@@ -115,11 +116,12 @@ function internHire() {
         fileHTML += `
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            <h5 class="card-subtitle mb-2 text-muted">Name: ${theIntern.name}</h5>
+            <h5 class="card-subtitle">${theIntern.name}</h5>
+            <br>
             <h6 class="card-title">${theIntern.getRole()}</h6>
         </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p class="card-text">Id: ${theIntern.id}</p></li>
+            <ul class="list-group">
+                <li class="list-group-item"><p class="card-text">ID: ${theIntern.id}</p></li>
                 <li class="list-group-item">Email: <span class="email"><a href="mailto:${theIntern.email}" class="card-link"></a></span></li>
                 <li class="list-group-item"><p>School: ${theIntern.school}</p></li>
             </ul>

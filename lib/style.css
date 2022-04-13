@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+    background-color: tomato;
+    color: antiquewhite;
+    padding: 50px;
+    margin-bottom: 80px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+.card {
+    box-shadow: 5px 5px 10px;
+}
+.card-header {
+    background-color: blue;
+    color: antiquewhite;
+    padding: 30px;
+    border: solid;
+}
+.card-subtitle {
+    font-size: 35px;
+}
+.card-title {
+    font-size: 27px;
+}
+.list-group {
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: 15px;
+}

@@ -68,7 +68,7 @@ function managerHire() {
         </div>
             <ul class="list-group">
                 <li class="list-group-item"><p class="card-text">ID: ${theManager.id}</p></li>
-                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theManager.email}" class="card-link"></a></span></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theManager.email}" class="card-link">${theManager.email}</a></span></li>
                 <li class="list-group-item"><p>Office Number: ${theManager.officeNumber}</p></li>
             </ul>
     </div>
@@ -95,7 +95,7 @@ function engineerHire() {
         </div>
             <ul class="list-group">
                 <li class="list-group-item"><p class="card-text">ID: ${theEngineer.id}</p></li>
-                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theEngineer.email}" class="card-link"></a></span></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theEngineer.email}" class="card-link">${theEngineer.email}</a></span></li>
                 <li class="list-group-item"><p>GitHub: ${theEngineer.github}</p></li>
             </ul>
     </div>
@@ -122,7 +122,7 @@ function internHire() {
         </div>
             <ul class="list-group">
                 <li class="list-group-item"><p class="card-text">ID: ${theIntern.id}</p></li>
-                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theIntern.email}" class="card-link"></a></span></li>
+                <li class="list-group-item">Email: <span class="email"><a href="mailto:${theIntern.email}" class="card-link">${theIntern.email}</a></span></li>
                 <li class="list-group-item"><p>School: ${theIntern.school}</p></li>
             </ul>
     </div>

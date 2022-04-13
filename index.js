@@ -3,7 +3,7 @@ const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
-const creatFile = require('./lib/Cfile');
+const createFile = require('./lib/Cfile');
 
 let fileHTML = "";
 
@@ -28,7 +28,7 @@ function init() {
                         break;
                     default:
                         generateHTML();
-                        console.log(fileHTML);
+                        // console.log(fileHTML);
                 }
 
             })
@@ -124,9 +124,11 @@ function internHire() {
 }
 
 function generateHTML() {
+    fileHTML.appendFile(createFile);
     fs.writeFileSync('index.html', fileHTML, (err) => {
         if (err) throw err;
     })
 }
 
+// Run program
 init();

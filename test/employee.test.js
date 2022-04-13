@@ -15,3 +15,6 @@ it('Should test for getId()', () => {
 it('Should test for getEmail()', () => {
     expect(employee.getEmail()).toEqual('testname@yahoo.com');
 });
+it('Should test for getRole()', () => {
+    expect(employee.getRole()).toEqual('Employee');
+});

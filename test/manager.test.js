@@ -19,3 +19,6 @@ it('Should test for getEmail()', () => {
 it('Should test for getOfficeNumber()', () => {
     expect(manager.getOfficeNumber()).toEqual('fr234567');
 });
+it('Should test for getRole()', () => {
+    expect(manager.getRole()).toEqual('Manager');
+});

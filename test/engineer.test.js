@@ -19,3 +19,6 @@ it('Should test for getEmail()', () => {
 it('Should test for getGitHub()', () => {
     expect(engineer.getGitHub()).toEqual('userName');
 });
+it('Should test for getRole()', () => {
+    expect(engineer.getRole()).toEqual('Engineer');
+});

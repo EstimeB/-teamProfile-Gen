@@ -19,3 +19,6 @@ it('Should test for getEmail()', () => {
 it('Should test for getschool()', () => {
     expect(intern.getschool()).toEqual('Schoolname');
 });
+it('Should test for getRole()', () => {
+    expect(intern.getRole()).toEqual('Intern');
+});

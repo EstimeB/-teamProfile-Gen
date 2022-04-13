@@ -96,7 +96,7 @@ function engineerHire() {
             <ul class="list-group">
                 <li class="list-group-item"><p class="card-text">ID: ${theEngineer.id}</p></li>
                 <li class="list-group-item">Email: <span class="email"><a href="mailto:${theEngineer.email}" class="card-link">${theEngineer.email}</a></span></li>
-                <li class="list-group-item"><p>GitHub: ${theEngineer.github}</p></li>
+                <li class="list-group-item">GitHub: <span class="github"><a href="https://github.com/${theEngineer.github}" class="card-link">${theEngineer.github}</a></span></li>
             </ul>
     </div>
         `

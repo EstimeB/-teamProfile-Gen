@@ -16,7 +16,11 @@
  Node.js command line application, can be run through you terminal. 
 
 ### Usage 
- Used to generate HTML webpages that display summaries of a team's profile. 
+* Used to generate HTML webpages that display summaries of a team's profile. 
+* Command-line application that accepts user input. When prompted for team members and their information, an HTML file is generated that displays a nicely formatted team roster based on user input. 
+* When email address in clicked in the HTML, default email program opens and populates the TO field of the email with the address. When click on GitHub username, GitHub profile opens in a new tab. 
+* When prompted to enter Manager's name, employee ID, email address, and office number and/or GitHub username, School in engineer and intern's case.
+* When decide to finish building the team, exit the application, and the HTML is generated.  
 
 ### License 
  The Unlicense 
@@ -28,10 +32,7 @@ For further information on the license please visit (https://snyk.io/learn/open-
  Estimeb 
 
 ### Tests 
-* Command-line application that accepts user input. When prompted for team members and their information, an HTML file is generated that displays a nicely formatted team roster based on user input. 
-* When email address in clicked in the HTML, default email program opens and populates the TO field of the email with the address. When click on GitHub username, GitHub profile opens in a new tab. 
-* When prompted to enter Manager's name, employee ID, email address, and office number and/or GitHub username, School in engineer and intern's case.
-* When decide to finish building the team, exit the application, and the HTML is generated.  
+ Includes unit test for every part of the code and it passes every test.
 
 https://drive.google.com/file/d/19fyx7Giz8jT26uLo2obSjspr9DBaEfDh/view?usp=sharing
 https://drive.google.com/file/d/1PAl39R2gNaiA_mwAVNewVupqwl2G6Wxl/view?usp=sharing
